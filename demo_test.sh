@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Image and model names
-TEST_IMG=ADE_val_00001519.jpg
+TEST_IMG=/content/semantic-segmentation-pytorch/photo/
 MODEL_PATH=ade20k-resnet50dilated-ppm_deepsup
 RESULT_PATH=./
 
@@ -18,9 +18,9 @@ fi
 if [ ! -e $DECODER ]; then
   wget -P $MODEL_PATH http://sceneparsing.csail.mit.edu/model/pytorch/$DECODER
 fi
-if [ ! -e $TEST_IMG ]; then
-  wget -P $RESULT_PATH http://sceneparsing.csail.mit.edu/data/ADEChallengeData2016/images/validation/$TEST_IMG
-fi
+# if [ ! -e $TEST_IMG ]; then
+#   wget -P $RESULT_PATH http://sceneparsing.csail.mit.edu/data/ADEChallengeData2016/images/validation/$TEST_IMG
+# fi
 
 # Inference
 python3 -u test.py \

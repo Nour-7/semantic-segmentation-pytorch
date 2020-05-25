@@ -5,6 +5,7 @@ import re
 import functools
 import fnmatch
 import numpy as np
+import glob
 
 
 def setup_logger(distributed_rank=0, filename="log.txt"):
@@ -24,9 +25,11 @@ def setup_logger(distributed_rank=0, filename="log.txt"):
 
 def find_recursive(root_dir, ext='.jpg'):
     files = []
-    for root, dirnames, filenames in os.walk(root_dir):
-        for filename in fnmatch.filter(filenames, '*' + ext):
-            files.append(os.path.join(root, filename))
+    for filename in glob.glob(r'/content/semantic-segmentation-pytorch/photo/*'):
+    # for root, dirnames, filenames in os.walk(root_dir):
+      files.append(filename)
+        # for filename in fnmatch.filter(filenames, '*' + ext):
+        #     files.append(os.path.join(root, filename))
     return files
 
 
