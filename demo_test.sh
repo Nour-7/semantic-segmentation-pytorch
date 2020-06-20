@@ -23,9 +23,10 @@ fi
 # fi
 
 # Inference
-python3 -u test.py \
-  --imgs $TEST_IMG \
-  --cfg config/ade20k-resnet50dilated-ppm_deepsup.yaml \
-  DIR $MODEL_PATH \
-  TEST.result ./ \
-  TEST.checkpoint epoch_20.pth
+
+# python3 -u test.py \
+#   --imgs $TEST_IMG \
+#   --cfg config/ade20k-resnet50dilated-ppm_deepsup.yaml \
+#   DIR $MODEL_PATH \
+#   TEST.result ./ \
+#   TEST.checkpoint epoch_20.pth
